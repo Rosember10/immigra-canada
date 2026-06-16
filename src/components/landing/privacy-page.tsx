@@ -1,6 +1,9 @@
 "use client";
 
-import { startTransition, useState } from "react";
+import { startTransition, useEffect, useLayoutEffect, useState } from "react";
+
+const useIsomorphicLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
 import { ArrowLeft } from "lucide-react";
 
 import { type Language } from "@/content/immigra";
@@ -149,11 +152,12 @@ const copy: Record<"es" | "fr", PrivacyCopy> = {
 };
 
 export function PrivacyPage() {
-  const [language, setLanguage] = useState<"es" | "fr">(() => {
-    if (typeof window === "undefined") return "es";
+  const [language, setLanguage] = useState<"es" | "fr">("es");
+
+  useIsomorphicLayoutEffect(() => {
     const stored = window.localStorage.getItem("ic_lang");
-    return stored === "fr" ? "fr" : "es";
-  });
+    if (stored === "fr") setLanguage("fr");
+  }, []);
 
   const c = copy[language];
 

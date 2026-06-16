@@ -22,7 +22,10 @@ import {
 } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { startTransition, useEffect, useState } from "react";
+import { startTransition, useEffect, useLayoutEffect, useState } from "react";
+
+const useIsomorphicLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 import {
   companyAnchors,
@@ -92,22 +95,20 @@ function FaqItem({
 }
 
 export function LandingPage() {
-  const [language, setLanguage] = useState<Language>(() => {
-    if (typeof window === "undefined") {
-      return "es";
-    }
-
-    const stored = window.localStorage.getItem("ic_lang");
-    return stored === "es" || stored === "en" || stored === "fr"
-      ? stored
-      : "es";
-  });
+  const [language, setLanguage] = useState<Language>("es");
   const [isScrolled, setIsScrolled] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const copy = translations[language];
   const contactHref = `mailto:${copy.contact.emailVal}`;
+
+  useIsomorphicLayoutEffect(() => {
+    const stored = window.localStorage.getItem("ic_lang");
+    if (stored === "es" || stored === "en" || stored === "fr") {
+      setLanguage(stored);
+    }
+  }, []);
 
   useEffect(() => {
     window.localStorage.setItem("ic_lang", language);
