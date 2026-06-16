@@ -307,27 +307,29 @@ export function LandingPage() {
               {copy.hero.cta2}
             </a>
           </div>
-          <div className="hero-trust" data-hero-item>
-            <div className="ht">
-              <Globe size={19} />
-              {copy.hero.t1}
-            </div>
-            <div className="ht">
-              <UserRound size={19} />
-              {copy.hero.t2}
-            </div>
-            <div className="ht">
-              <Files size={19} />
-              {copy.hero.t3}
-            </div>
-          </div>
         </div>
         <div className="hero-foot">
           <div className="wrap">
+            <div className="hero-foot-main">
+              <div className="hero-trust">
+                <div className="ht">
+                  <Globe size={19} />
+                  {copy.hero.t1}
+                </div>
+                <div className="ht">
+                  <UserRound size={19} />
+                  {copy.hero.t2}
+                </div>
+                <div className="ht">
+                  <Files size={19} />
+                  {copy.hero.t3}
+                </div>
+              </div>
+              <span>{copy.hero.loc}</span>
+            </div>
             <span className="scroll-hint">
               <span className="dot" />
             </span>
-            <span>{copy.hero.loc}</span>
           </div>
         </div>
       </header>
