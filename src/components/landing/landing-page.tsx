@@ -356,9 +356,6 @@ export function LandingPage() {
                 <p>{copy.founder.b2}</p>
               </div>
               <div className="founder-sign">
-                <span className="av">
-                  <UserRound size={24} />
-                </span>
                 <div>
                   <div className="nm">{copy.founder.name}</div>
                   <div className="rl">{copy.founder.role}</div>

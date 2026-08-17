@@ -164,8 +164,8 @@ export const translations: Record<Language, Translation> = {
       quote: "Llegué a Canadá con muchas preguntas y sin una guía clara.",
       b1: "Sé lo que se siente empezar de cero en un país nuevo: los formularios, los plazos, el miedo a un error que retrase todo. Nadie debería atravesar ese proceso en soledad.",
       b2: "Por eso creé Immigra Canada: para ofrecer el acompañamiento ordenado, humano y honesto que a mí me hubiera gustado tener. Hoy ayudamos a familias, estudiantes y trabajadores a presentar su mejor solicitud, con confianza.",
-      name: "Fundador de Immigra Canada",
-      role: "Llegó como inmigrante, hoy guía a otros",
+      name: "Mariana Velasco Esquivel",
+      role: "Fundadora de Immigra Canada",
     },
     services: {
       eyebrow: "Servicios",
@@ -384,8 +384,8 @@ export const translations: Record<Language, Translation> = {
       quote: "I arrived in Canada with many questions and no clear guidance.",
       b1: "I know what it feels like to start over in a new country — the forms, the deadlines, the fear of one mistake delaying everything. No one should go through that alone.",
       b2: "That's why I created Immigra Canada: to offer the orderly, human and honest support I wish I'd had. Today we help families, students and workers submit their strongest application, with confidence.",
-      name: "Founder of Immigra Canada",
-      role: "Arrived as an immigrant, now guides others",
+      name: "Mariana Velasco Esquivel",
+      role: "Founder of Immigra Canada",
     },
     services: {
       eyebrow: "Services",
@@ -599,8 +599,8 @@ export const translations: Record<Language, Translation> = {
       quote: "Je suis arrivé au Canada avec beaucoup de questions et aucun repère clair.",
       b1: "Je sais ce que c'est de tout recommencer dans un nouveau pays : les formulaires, les délais, la peur qu'une erreur retarde tout. Personne ne devrait traverser cela seul.",
       b2: "C'est pourquoi j'ai créé Immigra Canada : pour offrir l'accompagnement structuré, humain et honnête que j'aurais aimé avoir. Aujourd'hui, nous aidons familles, étudiants et travailleurs à déposer leur meilleure demande, en confiance.",
-      name: "Fondateur d'Immigra Canada",
-      role: "Arrivé comme immigrant, guide aujourd'hui",
+      name: "Mariana Velasco Esquivel",
+      role: "Fondatrice d'Immigra Canada",
     },
     services: {
       eyebrow: "Services",
