@@ -20,6 +20,7 @@ import {
   Users,
   X,
 } from "lucide-react";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { startTransition, useEffect, useLayoutEffect, useState } from "react";
@@ -297,14 +298,11 @@ export function LandingPage() {
             {copy.hero.sub}
           </p>
           <div className="hero-cta" data-hero-item>
-            <a href="#assessment" className="btn btn-primary">
-              {copy.hero.cta1}
+            <a href={contactHref} className="btn btn-primary">
+              {copy.hero.cta2}
               <span className="arr">
                 <ArrowRight size={18} />
               </span>
-            </a>
-            <a href="#contact" className="btn btn-ghost">
-              {copy.hero.cta2}
             </a>
           </div>
         </div>
@@ -337,8 +335,14 @@ export function LandingPage() {
       <main>
         <section className="section founder" id="story">
           <div className="wrap founder-grid">
-            <div data-reveal>
-              <Placeholder label="retrato · fundador/a" className="founder-photo" />
+            <div className="founder-photo" data-reveal>
+              <Image
+                src="/images/founder/founder-portrait.webp"
+                alt="Fundador de Immigra Canada"
+                fill
+                sizes="(min-width: 1040px) 45vw, 90vw"
+                className="object-cover"
+              />
             </div>
             <div data-reveal data-delay="100">
               <span className="eyebrow">{copy.founder.eyebrow}</span>

@@ -545,8 +545,8 @@ p {
 .hero {
   position: relative;
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
-  align-items: center;
   overflow: hidden;
   background: var(--dark);
 }
@@ -582,6 +582,10 @@ p {
 .hero-inner {
   position: relative;
   z-index: 2;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
   padding-top: 120px;
   padding-bottom: clamp(64px, 8vw, 110px);
@@ -646,11 +650,9 @@ p {
 }
 
 .hero-foot {
-  position: absolute;
-  right: 0;
-  bottom: 26px;
-  left: 0;
+  position: relative;
   z-index: 2;
+  padding-bottom: 26px;
 }
 
 .hero-foot .wrap {
@@ -727,6 +729,9 @@ p {
 }
 
 .founder-photo {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
   min-height: 440px;
   aspect-ratio: 4 / 5;
 }
@@ -1518,14 +1523,6 @@ p {
     display: flex;
   }
 
-  .hero {
-    align-items: flex-end;
-  }
-
-  .hero-copy {
-    max-width: 100%;
-    padding-top: 40px;
-  }
 }
 
 @media (max-width: 640px) {
