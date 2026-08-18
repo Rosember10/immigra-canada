@@ -11,6 +11,7 @@ import {
   HeartHandshake,
   House,
   IdCard,
+  Info,
   Menu,
   MessageCircleMore,
   Plane,
@@ -100,9 +101,22 @@ export function LandingPage() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openServices, setOpenServices] = useState<Set<string>>(new Set());
 
   const copy = translations[language];
   const contactHref = `mailto:${copy.contact.emailVal}`;
+
+  const toggleService = (key: string) => {
+    setOpenServices((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) {
+        next.delete(key);
+      } else {
+        next.add(key);
+      }
+      return next;
+    });
+  };
 
   useIsomorphicLayoutEffect(() => {
     const stored = window.localStorage.getItem("ic_lang");
@@ -374,10 +388,11 @@ export function LandingPage() {
             <div className="ed-card-grid">
               {copy.services.items.map((service, index) => {
                 const Icon = serviceIcons[service.k];
+                const isOpen = openServices.has(service.k);
                 return (
                   <article
                     key={service.k}
-                    className="ed-imgcard"
+                    className={`ed-imgcard${isOpen ? " open" : ""}`}
                     data-reveal
                     data-delay={(index % 4) * 70}
                   >
@@ -391,11 +406,18 @@ export function LandingPage() {
                         <Icon size={20} />
                       </span>
                       <h3>{service.t}</h3>
-                      <p>{service.d}</p>
-                      <a href="#contact" className="ed-learn">
-                        {copy.nav.contact}
-                        <ArrowRight size={15} />
-                      </a>
+                      <div className="ed-imgcard-detail">
+                        <p>{service.d}</p>
+                      </div>
+                      <button
+                        type="button"
+                        className="ed-learn"
+                        aria-expanded={isOpen}
+                        onClick={() => toggleService(service.k)}
+                      >
+                        {isOpen ? copy.services.less : copy.services.more}
+                        {isOpen ? <X size={15} /> : <Info size={15} />}
+                      </button>
                     </div>
                   </article>
                 );

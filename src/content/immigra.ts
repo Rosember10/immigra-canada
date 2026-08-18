@@ -51,6 +51,8 @@ type Translation = {
     eyebrow: string;
     title: string;
     sub: string;
+    more: string;
+    less: string;
     items: Array<{
       k: ServiceKey;
       t: string;
@@ -161,9 +163,9 @@ export const translations: Record<Language, Translation> = {
     },
     founder: {
       eyebrow: "Nuestra historia",
-      quote: "Llegué a Canadá con muchas preguntas y sin una guía clara.",
-      b1: "Sé lo que se siente empezar de cero en un país nuevo: los formularios, los plazos, el miedo a un error que retrase todo. Nadie debería atravesar ese proceso en soledad.",
-      b2: "Por eso creé Immigra Canada: para ofrecer el acompañamiento ordenado, humano y honesto que a mí me hubiera gustado tener. Hoy ayudamos a familias, estudiantes y trabajadores a presentar su mejor solicitud, con confianza.",
+      quote: "Mi objetivo es que te sientas acompañado durante cada etapa de tu proceso, brindándote información clara y un servicio cercano en español y francés.",
+      b1: "Soy Mariana Velasco Esquivel, Agente de soutien en immigration en Montreal, Canadá. Mi misión es acompañar a personas y familias en sus proyectos migratorios mediante orientación personalizada y apoyo administrativo en la preparación de sus expedientes.",
+      b2: "Entiendo los desafíos que enfrentan los nuevos inmigrantes y trabajo con compromiso, empatía y profesionalismo para ayudarte a presentar solicitudes organizadas y completas.",
       name: "Mariana Velasco Esquivel",
       role: "Fundadora de Immigra Canada",
     },
@@ -171,46 +173,48 @@ export const translations: Record<Language, Translation> = {
       eyebrow: "Servicios",
       title: "Apoyo para cada etapa de tu camino",
       sub: "No somos un bufete de abogados. Somos tu equipo de organización y preparación, paso a paso.",
+      more: "+ Información",
+      less: "Cerrar",
       items: [
         {
           k: "visitor",
           t: "Visa de visitante",
-          d: "Para visitar familia, turismo o negocios temporales en Canadá.",
+          d: "Asistencia para solicitudes de visa de visitante, extensiones de estadía y restauración de estatus. Te ayudo a preparar una solicitud clara y completa para aumentar las posibilidades de éxito de tu expediente.",
         },
         {
           k: "residency",
           t: "Residencia permanente",
-          d: "Programas federales y provinciales para construir tu futuro aquí.",
+          d: "Te acompaño en la preparación y organización de tu solicitud de residencia permanente en Canadá. Brindo apoyo en la recopilación de documentos, revisión de formularios y seguimiento de tu expediente para que presentes una solicitud completa y bien organizada.",
         },
         {
           k: "refugee",
-          t: "Solicitudes de refugio",
-          d: "Acompañamiento sensible y confidencial en cada paso del proceso.",
+          t: "Título de Viaje",
+          d: "Si eres una persona refugiada aceptada o protegida en Canadá, puedo ayudarte con la preparación de tu solicitud de Título de Viaje, asegurando que cuentes con toda la documentación necesaria para el proceso.",
         },
         {
           k: "work",
-          t: "Permiso de trabajo",
-          d: "Prepara tu solicitud laboral de forma sólida y profesional.",
+          t: "Permiso de trabajo (cerrado)",
+          d: "Te acompaño en la preparación de tu solicitud de permiso de trabajo cerrado en Canadá, un permiso que autoriza a trabajar para un empleador específico, bajo las condiciones indicadas en el documento. Brindo apoyo en la organización y revisión de documentos, preparación de formularios y seguimiento del proceso, de acuerdo con tu situación y los requisitos aplicables.",
         },
         {
           k: "study",
           t: "Permiso de estudios",
-          d: "Para estudiantes internacionales que eligen Canadá.",
+          d: "Brindo apoyo en la preparación de solicitudes de permiso de estudios para estudiantes internacionales que desean iniciar o continuar sus estudios en Canadá. Te acompaño en la organización de documentos y formularios requeridos.",
         },
         {
           k: "citizenship",
           t: "Ciudadanía",
-          d: "Da el último paso hacia tu vida como ciudadano canadiense.",
+          d: "Recibe orientación durante todo el proceso de obtención de la ciudadanía canadiense. Te ayudo a comprender los requisitos, preparar la documentación necesaria y completar correctamente los formularios correspondientes.",
         },
         {
           k: "passport",
           t: "Pasaporte canadiense",
-          d: "Trámite ordenado de tu pasaporte una vez obtienes la ciudadanía.",
+          d: "Asistencia en la preparación de solicitudes de pasaporte canadiense para adultos y menores. Te guío en la documentación requerida y en la correcta presentación de la solicitud.",
         },
         {
           k: "travel",
-          t: "Documento de viaje",
-          d: "Apoyo con documentos de viaje para residentes y refugiados.",
+          t: "Protección de Refugiados y Asilo",
+          d: "Ofrezco apoyo administrativo y orientación a personas que buscan protección en Canadá. Te acompaño en la preparación de documentos, recopilación de pruebas y organización de tu expediente para facilitar tu proceso.",
         },
       ],
     },
@@ -381,9 +385,9 @@ export const translations: Record<Language, Translation> = {
     },
     founder: {
       eyebrow: "Our story",
-      quote: "I arrived in Canada with many questions and no clear guidance.",
-      b1: "I know what it feels like to start over in a new country — the forms, the deadlines, the fear of one mistake delaying everything. No one should go through that alone.",
-      b2: "That's why I created Immigra Canada: to offer the orderly, human and honest support I wish I'd had. Today we help families, students and workers submit their strongest application, with confidence.",
+      quote: "My goal is for you to feel supported at every stage of your process, with clear information and a close, personal service in Spanish and French.",
+      b1: "I'm Mariana Velasco Esquivel, an Immigration Support Agent based in Montreal, Canada. My mission is to guide people and families through their immigration projects with personalized guidance and administrative support in preparing their files.",
+      b2: "I understand the challenges newcomers face, and I work with commitment, empathy and professionalism to help you submit organized, complete applications.",
       name: "Mariana Velasco Esquivel",
       role: "Founder of Immigra Canada",
     },
@@ -391,46 +395,48 @@ export const translations: Record<Language, Translation> = {
       eyebrow: "Services",
       title: "Support for every stage of your journey",
       sub: "We're not a law firm. We're your organization and preparation team, step by step.",
+      more: "+ Info",
+      less: "Close",
       items: [
         {
           k: "visitor",
           t: "Visitor visa",
-          d: "To visit family, for tourism or temporary business in Canada.",
+          d: "Assistance with visitor visa applications, stay extensions and status restoration. I help you prepare a clear, complete application to increase your file's chances of success.",
         },
         {
           k: "residency",
           t: "Permanent residency",
-          d: "Federal and provincial programs to build your future here.",
+          d: "I guide you through preparing and organizing your permanent residency application in Canada. I support you with gathering documents, reviewing forms and tracking your file so you submit a complete, well-organized application.",
         },
         {
           k: "refugee",
-          t: "Refugee claims",
-          d: "Sensitive, confidential support at every step of the process.",
+          t: "Travel Document",
+          d: "If you are a recognized refugee or protected person in Canada, I can help you prepare your Refugee Travel Document application, making sure you have all the documentation needed for the process.",
         },
         {
           k: "work",
-          t: "Work permit",
-          d: "Prepare a solid, professional work application.",
+          t: "Work permit (closed)",
+          d: "I guide you through preparing your closed work permit application in Canada — a permit that authorizes you to work for a specific employer, under the conditions stated in the document. I support you with organizing and reviewing documents, preparing forms and following up on the process, according to your situation and the applicable requirements.",
         },
         {
           k: "study",
           t: "Study permit",
-          d: "For international students choosing Canada.",
+          d: "I support international students in preparing study permit applications to start or continue their studies in Canada, helping you organize the required documents and forms.",
         },
         {
           k: "citizenship",
           t: "Citizenship",
-          d: "Take the final step toward life as a Canadian citizen.",
+          d: "Get guidance throughout the entire Canadian citizenship process. I help you understand the requirements, prepare the necessary documentation and correctly complete the corresponding forms.",
         },
         {
           k: "passport",
           t: "Canadian passport",
-          d: "An orderly passport process once you obtain citizenship.",
+          d: "Assistance preparing Canadian passport applications for adults and minors. I guide you through the required documentation and the correct submission of your application.",
         },
         {
           k: "travel",
-          t: "Travel document",
-          d: "Support with travel documents for residents and refugees.",
+          t: "Refugee Protection and Asylum",
+          d: "I offer administrative support and guidance to people seeking protection in Canada. I help you prepare documents, gather evidence and organize your file to make your process easier.",
         },
       ],
     },
@@ -596,9 +602,9 @@ export const translations: Record<Language, Translation> = {
     },
     founder: {
       eyebrow: "Notre histoire",
-      quote: "Je suis arrivé au Canada avec beaucoup de questions et aucun repère clair.",
-      b1: "Je sais ce que c'est de tout recommencer dans un nouveau pays : les formulaires, les délais, la peur qu'une erreur retarde tout. Personne ne devrait traverser cela seul.",
-      b2: "C'est pourquoi j'ai créé Immigra Canada : pour offrir l'accompagnement structuré, humain et honnête que j'aurais aimé avoir. Aujourd'hui, nous aidons familles, étudiants et travailleurs à déposer leur meilleure demande, en confiance.",
+      quote: "Mon objectif est que vous vous sentiez accompagné à chaque étape de votre parcours, avec une information claire et un service humain en espagnol et en français.",
+      b1: "Je suis Mariana Velasco Esquivel, agente de soutien à l'immigration à Montréal, au Canada. Ma mission est d'accompagner les personnes et les familles dans leur projet d'immigration grâce à un accompagnement personnalisé et un soutien administratif dans la préparation de leur dossier.",
+      b2: "Je comprends les défis auxquels font face les nouveaux arrivants et je travaille avec engagement, empathie et professionnalisme pour vous aider à déposer des demandes organisées et complètes.",
       name: "Mariana Velasco Esquivel",
       role: "Fondatrice d'Immigra Canada",
     },
@@ -606,46 +612,48 @@ export const translations: Record<Language, Translation> = {
       eyebrow: "Services",
       title: "Un appui à chaque étape de votre parcours",
       sub: "Nous ne sommes pas un cabinet d'avocats. Nous sommes votre équipe d'organisation et de préparation, étape par étape.",
+      more: "+ Infos",
+      less: "Fermer",
       items: [
         {
           k: "visitor",
           t: "Visa de visiteur",
-          d: "Pour visiter la famille, le tourisme ou des affaires temporaires au Canada.",
+          d: "Assistance pour les demandes de visa de visiteur, les prolongations de séjour et le rétablissement de statut. Je vous aide à préparer une demande claire et complète pour augmenter les chances de succès de votre dossier.",
         },
         {
           k: "residency",
           t: "Résidence permanente",
-          d: "Programmes fédéraux et provinciaux pour bâtir votre avenir ici.",
+          d: "Je vous accompagne dans la préparation et l'organisation de votre demande de résidence permanente au Canada. Je vous aide à rassembler les documents, à réviser les formulaires et à suivre votre dossier afin de déposer une demande complète et bien organisée.",
         },
         {
           k: "refugee",
-          t: "Demandes d'asile",
-          d: "Un accompagnement sensible et confidentiel à chaque étape.",
+          t: "Titre de Voyage",
+          d: "Si vous êtes une personne réfugiée reconnue ou protégée au Canada, je peux vous aider à préparer votre demande de titre de voyage, en veillant à ce que vous disposiez de toute la documentation nécessaire pour la démarche.",
         },
         {
           k: "work",
-          t: "Permis de travail",
-          d: "Préparez une demande de travail solide et professionnelle.",
+          t: "Permis de travail (fermé)",
+          d: "Je vous accompagne dans la préparation de votre demande de permis de travail fermé au Canada, un permis qui vous autorise à travailler pour un employeur précis, selon les conditions indiquées sur le document. Je vous aide à organiser et réviser les documents, préparer les formulaires et suivre le processus, selon votre situation et les exigences applicables.",
         },
         {
           k: "study",
           t: "Permis d'études",
-          d: "Pour les étudiants internationaux qui choisissent le Canada.",
+          d: "J'accompagne les étudiants internationaux dans la préparation de leur demande de permis d'études pour commencer ou poursuivre leurs études au Canada, en organisant les documents et formulaires requis.",
         },
         {
           k: "citizenship",
           t: "Citoyenneté",
-          d: "Faites le dernier pas vers votre vie de citoyen canadien.",
+          d: "Recevez un accompagnement tout au long du processus d'obtention de la citoyenneté canadienne. Je vous aide à comprendre les exigences, à préparer la documentation nécessaire et à remplir correctement les formulaires requis.",
         },
         {
           k: "passport",
           t: "Passeport canadien",
-          d: "Une démarche ordonnée de passeport après l'obtention de la citoyenneté.",
+          d: "Assistance pour la préparation des demandes de passeport canadien, pour adultes et mineurs. Je vous guide dans la documentation requise et la bonne présentation de votre demande.",
         },
         {
           k: "travel",
-          t: "Titre de voyage",
-          d: "Appui pour les titres de voyage des résidents et réfugiés.",
+          t: "Protection des réfugiés et asile",
+          d: "J'offre un soutien administratif et une orientation aux personnes qui cherchent une protection au Canada. Je vous accompagne dans la préparation des documents, la collecte de preuves et l'organisation de votre dossier afin de faciliter votre démarche.",
         },
       ],
     },
