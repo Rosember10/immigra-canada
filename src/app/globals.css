@@ -831,11 +831,14 @@ p {
   border-radius: var(--radius);
 }
 
-.ed-imgcard .ph {
+.ed-imgcard-media {
   position: absolute;
   inset: 0;
-  align-items: flex-start;
   border-radius: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(1.01);
 }
 
 .ed-imgcard-grad {

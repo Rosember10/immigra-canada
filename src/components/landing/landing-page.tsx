@@ -48,6 +48,17 @@ const serviceIcons = {
   travel: FileBadge2,
 } as const;
 
+const serviceImages = {
+  visitor: "/images/services/visitor-visa.webp",
+  residency: "/images/services/permanent-residency.webp",
+  refugee: "/images/services/refugee-asylum.webp",
+  work: "/images/services/work-permit.webp",
+  study: "/images/services/study-permit.webp",
+  citizenship: "/images/services/citizenship.webp",
+  passport: "/images/services/canadian-passport.webp",
+  travel: "/images/services/travel-document.webp",
+} as const;
+
 const whyIcons = [HeartHandshake, Files, MessageCircleMore, Globe] as const;
 
 function Placeholder({
@@ -396,9 +407,11 @@ export function LandingPage() {
                     data-reveal
                     data-delay={(index % 4) * 70}
                   >
-                    <Placeholder
-                      label={`foto · ${service.t.toLowerCase()}`}
-                      className="ph-dark"
+                    <div
+                      className="ed-imgcard-media"
+                      style={{
+                        backgroundImage: `url(${serviceImages[service.k]})`,
+                      }}
                     />
                     <div className="ed-imgcard-grad" />
                     <div className="ed-imgcard-body">
