@@ -677,9 +677,6 @@ export function LandingPage() {
               <h4>{copy.footer.colContact}</h4>
               <ul>
                 <li>
-                  <a href={contactHref}>{copy.contact.whatsappVal}</a>
-                </li>
-                <li>
                   <a href={contactHref}>{copy.contact.emailVal}</a>
                 </li>
                 <li>

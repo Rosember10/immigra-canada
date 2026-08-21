@@ -116,7 +116,6 @@ type Translation = {
     whatsapp: string;
     emailLabel: string;
     book: string;
-    whatsappVal: string;
     emailVal: string;
     bookVal: string;
   };
@@ -334,7 +333,6 @@ export const translations: Record<Language, Translation> = {
       whatsapp: "WhatsApp",
       emailLabel: "Correo",
       book: "Agenda una consulta",
-      whatsappVal: "+1 (000) 000-0000",
       emailVal: "hola@immigracanada.ca",
       bookVal: "Reserva en línea · 30 min",
     },
@@ -556,7 +554,6 @@ export const translations: Record<Language, Translation> = {
       whatsapp: "WhatsApp",
       emailLabel: "Email",
       book: "Book a consultation",
-      whatsappVal: "+1 (000) 000-0000",
       emailVal: "hello@immigracanada.ca",
       bookVal: "Book online · 30 min",
     },
@@ -773,7 +770,6 @@ export const translations: Record<Language, Translation> = {
       whatsapp: "WhatsApp",
       emailLabel: "Courriel",
       book: "Réserver une consultation",
-      whatsappVal: "+1 (000) 000-0000",
       emailVal: "bonjour@immigracanada.ca",
       bookVal: "Réserver en ligne · 30 min",
     },
