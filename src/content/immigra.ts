@@ -164,7 +164,7 @@ export const translations: Record<Language, Translation> = {
     founder: {
       eyebrow: "Nuestra historia",
       quote: "Mi objetivo es que te sientas acompañado durante cada etapa de tu proceso, brindándote información clara y un servicio cercano en español y francés.",
-      b1: "Soy Mariana Velasco Esquivel, Agente de soutien en immigration en Montreal, Canadá. Mi misión es acompañar a personas y familias en sus proyectos migratorios mediante orientación personalizada y apoyo administrativo en la preparación de sus expedientes.",
+      b1: "Soy Mariana Velasco Esquivel, agente de soporte en inmigración en Montreal, Canadá. Mi misión es acompañar a personas y familias en sus proyectos migratorios mediante orientación personalizada y apoyo administrativo en la preparación de sus expedientes.",
       b2: "Entiendo los desafíos que enfrentan los nuevos inmigrantes y trabajo con compromiso, empatía y profesionalismo para ayudarte a presentar solicitudes organizadas y completas.",
       name: "Mariana Velasco Esquivel",
       role: "Fundadora de Immigra Canada",
@@ -193,8 +193,8 @@ export const translations: Record<Language, Translation> = {
         },
         {
           k: "work",
-          t: "Permiso de trabajo (cerrado)",
-          d: "Te acompaño en la preparación de tu solicitud de permiso de trabajo cerrado en Canadá, un permiso que autoriza a trabajar para un empleador específico, bajo las condiciones indicadas en el documento. Brindo apoyo en la organización y revisión de documentos, preparación de formularios y seguimiento del proceso, de acuerdo con tu situación y los requisitos aplicables.",
+          t: "Permiso de trabajo (abierto)",
+          d: "Te acompaño en la preparación de tu solicitud de permiso de trabajo abierto en Canadá. Brindo apoyo en la organización y revisión de documentos, preparación de formularios y seguimiento del proceso, de acuerdo con tu situación y los requisitos aplicables.",
         },
         {
           k: "study",

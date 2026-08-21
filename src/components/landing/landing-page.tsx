@@ -51,12 +51,12 @@ const serviceIcons = {
 const serviceImages = {
   visitor: "/images/services/visitor-visa.webp",
   residency: "/images/services/permanent-residency.webp",
-  refugee: "/images/services/refugee-asylum.webp",
+  refugee: "/images/services/travel-document.webp",
   work: "/images/services/work-permit.webp",
   study: "/images/services/study-permit.webp",
   citizenship: "/images/services/citizenship.webp",
   passport: "/images/services/canadian-passport.webp",
-  travel: "/images/services/travel-document.webp",
+  travel: "/images/services/refugee-asylum.webp",
 } as const;
 
 const whyIcons = [HeartHandshake, Files, MessageCircleMore, Globe] as const;
@@ -441,7 +441,13 @@ export function LandingPage() {
 
         <section className="section ed-process" id="process">
           <div className="ed-process-photo">
-            <Placeholder label="foto · asesor en consulta" className="hero-photo-fill" />
+            <Image
+              src="/images/process/immigration-consultation.webp"
+              alt="Asesoría migratoria personalizada"
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
           </div>
           <div className="ed-process-ov" />
           <div className="wrap ed-process-grid">
@@ -524,7 +530,15 @@ export function LandingPage() {
                 </div>
               </div>
               <div className="assess-right">
-                <Placeholder label="foto · consulta familiar" className="assess-photo" />
+                <div className="assess-photo">
+                  <Image
+                    src="/images/assessment/free-assessment.webp"
+                    alt="Familia en una consulta de evaluación migratoria"
+                    fill
+                    sizes="(min-width: 1040px) 35vw, 90vw"
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>

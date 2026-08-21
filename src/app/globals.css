@@ -845,12 +845,14 @@ p {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(
-    180deg,
-    rgba(15, 12, 7, 0) 30%,
-    rgba(15, 12, 7, 0.5) 62%,
-    rgba(12, 9, 5, 0.9) 100%
-  );
+  background:
+    linear-gradient(rgba(11, 37, 69, 0.24), rgba(11, 37, 69, 0.24)),
+    linear-gradient(
+      180deg,
+      rgba(15, 12, 7, 0) 30%,
+      rgba(15, 12, 7, 0.5) 62%,
+      rgba(12, 9, 5, 0.9) 100%
+    );
 }
 
 .ed-imgcard-body {
@@ -1129,9 +1131,15 @@ p {
 }
 
 .assess-photo {
+  position: relative;
   width: 100%;
   aspect-ratio: 3 / 4;
-  border-radius: 18px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.assess-photo img {
+  border-radius: inherit;
 }
 
 .ed-testi {
