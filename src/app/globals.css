@@ -554,29 +554,22 @@ p {
 .hero-photo {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(rgba(11, 37, 69, 0.42), rgba(11, 37, 69, 0.42)),
-    url("/images/hero/hero-family-arriving-canada.webp"),
-    repeating-linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.03) 0 16px,
-      rgba(255, 255, 255, 0) 16px 32px
-    ),
-    linear-gradient(120deg, #241d12, #3a2f1d 55%, #4a3c25);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  z-index: 0;
+  object-position: center;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(10, 17, 24, 0.58) 0%,
-    rgba(10, 17, 24, 0.34) 38%,
-    rgba(10, 17, 24, 0.16) 100%
-  );
+  z-index: 1;
+  background:
+    linear-gradient(rgba(11, 37, 69, 0.42), rgba(11, 37, 69, 0.42)),
+    linear-gradient(
+      90deg,
+      rgba(10, 17, 24, 0.58) 0%,
+      rgba(10, 17, 24, 0.34) 38%,
+      rgba(10, 17, 24, 0.16) 100%
+    );
 }
 
 .hero-inner {
@@ -835,9 +828,7 @@ p {
   position: absolute;
   inset: 0;
   border-radius: 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  object-position: center;
   transform: scale(1.01);
 }
 
@@ -1175,7 +1166,7 @@ p {
 
 .ed-testi-card {
   display: flex;
-  min-height: 380px;
+  min-height: 340px;
   flex-direction: column;
   cursor: pointer;
   border: 1px solid rgba(80, 126, 184, 0.12);
@@ -1221,8 +1212,24 @@ p {
   line-height: 0.6;
 }
 
+.ed-testi-q .ed-quote-mark {
+  display: inline;
+  margin: 0 4px 0 0;
+  font-size: 28px;
+  line-height: 0;
+  vertical-align: -0.16em;
+}
+
+.ed-testi-q .ed-quote-mark-close {
+  display: inline-block;
+  margin-left: 4px;
+  margin-right: 0;
+  transform: scaleX(-1);
+}
+
 .ed-testi-q {
   flex: 1;
+  margin-top: 14px;
   color: var(--ink);
   font-size: 15.5px;
   line-height: 1.6;
@@ -1233,7 +1240,7 @@ p {
 }
 
 .ed-testi-by {
-  margin-top: 24px;
+  margin-top: 12px;
 }
 
 .ed-testi-by .nm {

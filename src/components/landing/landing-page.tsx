@@ -21,10 +21,9 @@ import {
   Users,
   X,
 } from "lucide-react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { startTransition, useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 
 const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
@@ -34,8 +33,15 @@ import {
   translations,
   type Language,
 } from "@/content/immigra";
-import { CookieBanner } from "@/components/ui/cookie-banner";
 import { Logo } from "@/components/ui/logo";
+
+const CookieBanner = dynamic(
+  () =>
+    import("@/components/ui/cookie-banner").then(
+      (module) => module.CookieBanner,
+    ),
+  { ssr: false },
+);
 
 const serviceIcons = {
   visitor: Plane,
@@ -112,21 +118,13 @@ export function LandingPage() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [openServices, setOpenServices] = useState<Set<string>>(new Set());
+  const [openServices, setOpenServices] = useState<Record<string, boolean>>({});
 
   const copy = translations[language];
   const contactHref = `mailto:${copy.contact.emailVal}`;
 
   const toggleService = (key: string) => {
-    setOpenServices((prev) => {
-      const next = new Set(prev);
-      if (next.has(key)) {
-        next.delete(key);
-      } else {
-        next.add(key);
-      }
-      return next;
-    });
+    setOpenServices((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
   useIsomorphicLayoutEffect(() => {
@@ -176,50 +174,66 @@ export function LandingPage() {
       return;
     }
 
-    gsap.registerPlugin(ScrollTrigger);
+    let cancelled = false;
+    let revertAnimations: (() => void) | undefined;
 
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        "[data-hero-item]",
-        { autoAlpha: 0, y: 28 },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.9,
-          ease: "power3.out",
-          stagger: 0.12,
-        },
-      );
+    const loadAnimations = async () => {
+      const [{ gsap }, { ScrollTrigger }] = await Promise.all([
+        import("gsap"),
+        import("gsap/ScrollTrigger"),
+      ]);
 
-      gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((element) => {
-        const delay = Number(element.dataset.delay ?? 0) / 1000;
+      if (cancelled) return;
+
+      gsap.registerPlugin(ScrollTrigger);
+      const ctx = gsap.context(() => {
         gsap.fromTo(
-          element,
-          { autoAlpha: 0, y: 32 },
+          "[data-hero-item]",
+          { autoAlpha: 0, y: 28 },
           {
             autoAlpha: 1,
             y: 0,
             duration: 0.9,
-            delay,
             ease: "power3.out",
-            scrollTrigger: {
-              trigger: element,
-              start: "top 86%",
-              once: true,
-            },
+            stagger: 0.12,
           },
         );
-      });
-    });
 
-    return () => ctx.revert();
+        gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((element) => {
+          const delay = Number(element.dataset.delay ?? 0) / 1000;
+          gsap.fromTo(
+            element,
+            { autoAlpha: 0, y: 32 },
+            {
+              autoAlpha: 1,
+              y: 0,
+              duration: 0.9,
+              delay,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: element,
+                start: "top 86%",
+                once: true,
+              },
+            },
+          );
+        });
+      });
+
+      revertAnimations = () => ctx.revert();
+    };
+
+    void loadAnimations();
+
+    return () => {
+      cancelled = true;
+      revertAnimations?.();
+    };
   }, [language]);
 
   const handleLanguageChange = (nextLanguage: Language) => {
-    startTransition(() => {
-      setLanguage(nextLanguage);
-      setOpenFaq(0);
-    });
+    setLanguage(nextLanguage);
+    setOpenFaq(0);
   };
 
   return (
@@ -312,7 +326,14 @@ export function LandingPage() {
       </div>
 
       <header className="hero" id="top">
-        <div className="hero-photo" />
+        <Image
+          src="/images/hero/hero-family-arriving-canada.webp"
+          alt="Familia disfrutando su nueva vida en Canadá"
+          fill
+          preload
+          sizes="100vw"
+          className="hero-photo object-cover"
+        />
         <div className="hero-overlay" />
         <div className="wrap hero-inner">
           <span className="eyebrow hero-eyebrow" data-hero-item>
@@ -399,7 +420,7 @@ export function LandingPage() {
             <div className="ed-card-grid">
               {copy.services.items.map((service, index) => {
                 const Icon = serviceIcons[service.k];
-                const isOpen = openServices.has(service.k);
+                const isOpen = Boolean(openServices[service.k]);
                 return (
                   <article
                     key={service.k}
@@ -407,11 +428,13 @@ export function LandingPage() {
                     data-reveal
                     data-delay={(index % 4) * 70}
                   >
-                    <div
-                      className="ed-imgcard-media"
-                      style={{
-                        backgroundImage: `url(${serviceImages[service.k]})`,
-                      }}
+                    <Image
+                      src={serviceImages[service.k]}
+                      alt=""
+                      aria-hidden="true"
+                      fill
+                      sizes="(min-width: 1040px) 25vw, (min-width: 640px) 50vw, 100vw"
+                      className="ed-imgcard-media object-cover"
                     />
                     <div className="ed-imgcard-grad" />
                     <div className="ed-imgcard-body">
@@ -563,8 +586,11 @@ export function LandingPage() {
                   data-delay={(index % 4) * 80}
                 >
                   <span className="ed-testi-av">{item.n.charAt(0)}</span>
-                  <span className="ed-quote-mark">“</span>
-                  <p className="ed-testi-q">{item.q}</p>
+                  <p className="ed-testi-q">
+                    <span className="ed-quote-mark">“</span>
+                    {item.q}
+                    <span className="ed-quote-mark ed-quote-mark-close">“</span>
+                  </p>
                   <div className="ed-testi-by">
                     <div className="nm">{item.n}</div>
                     <div className="mt">{item.m}</div>

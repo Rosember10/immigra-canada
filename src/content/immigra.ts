@@ -272,24 +272,24 @@ export const translations: Record<Language, Translation> = {
       sub: "Sus palabras reflejan nuestro compromiso con la honestidad, la cercanía y los resultados que perduran.",
       items: [
         {
-          q: "Por fin sentí que alguien entendía mi situación. Todo estuvo ordenado y nunca me sentí sola en el proceso.",
-          n: "Mariana G.",
-          m: "Residencia permanente · de Colombia",
+          q: "Mariana me ayudó a organizar toda la documentación de mi solicitud. Su acompañamiento fue profesional, claro y siempre estuvo disponible para responder mis preguntas.",
+          n: "Cliente #1",
+          m: "Residencia permanente y permiso de viaje",
         },
         {
-          q: "Me explicaron cada documento con paciencia. Llegué a Canadá con mi familia y con mucha tranquilidad.",
-          n: "Yassine B.",
-          m: "Permiso de trabajo · de Marruecos",
+          q: "Gracias a su orientación pude entender cada etapa de mi proceso migratorio. Me sentí acompañado y seguro durante todo el trámite.",
+          n: "Cliente #2",
+          m: "Permiso de trabajo",
         },
         {
-          q: "Como estudiante estaba perdido con los formularios. Su acompañamiento hizo que todo fuera claro.",
-          n: "Diego R.",
-          m: "Permiso de estudios · de Perú",
+          q: "Excelente servicio. La revisión de mis formularios y documentos me dio mucha tranquilidad. Recomiendo su apoyo a cualquier persona que necesite orientación migratoria.",
+          n: "Cliente #3",
+          m: "Ciudadanía",
         },
         {
-          q: "Guiaron la residencia de toda nuestra familia. Hoy estamos juntos en Canadá, profundamente agradecidos.",
-          n: "Familia Okonkwo",
-          m: "Residencia familiar · de Nigeria",
+          q: "Su experiencia y conocimiento hicieron que todo fuera mucho más sencillo. Recibí respuestas rápidas, atención personalizada y un seguimiento constante de mi expediente.",
+          n: "José Muñoz",
+          m: "Permiso de estudios",
         },
       ],
     },
@@ -303,7 +303,7 @@ export const translations: Record<Language, Translation> = {
         },
         {
           q: "¿En qué idiomas atienden?",
-          a: "Atendemos en español, francés e inglés, para que entiendas cada paso del proceso en tu propio idioma.",
+          a: "Atendemos en español y francés, para que entiendas cada paso del proceso en tu propio idioma.",
         },
         {
           q: "¿Cuánto cuesta empezar?",
@@ -711,24 +711,24 @@ export const translations: Record<Language, Translation> = {
       sub: "Leurs mots reflètent notre engagement envers l'honnêteté, la proximité et des résultats durables.",
       items: [
         {
-          q: "J'ai enfin senti qu'on comprenait ma situation. Tout était organisé et je ne me suis jamais sentie seule.",
-          n: "Mariana G.",
-          m: "Résidence permanente · de Colombie",
+          q: "Mariana m'a aidé à organiser tous les documents de ma demande. Son accompagnement a été professionnel, clair et elle était toujours disponible pour répondre à mes questions.",
+          n: "Client #1",
+          m: "Résidence permanente et titre de voyage",
         },
         {
-          q: "Ils m'ont expliqué chaque document avec patience. Je suis arrivé au Canada avec ma famille, l'esprit tranquille.",
-          n: "Yassine B.",
-          m: "Permis de travail · du Maroc",
+          q: "Grâce à son orientation, j'ai pu comprendre chaque étape de mon processus d'immigration. Je me suis senti accompagné et en confiance tout au long de la démarche.",
+          n: "Client #2",
+          m: "Permis de travail",
         },
         {
-          q: "Étudiant, j'étais perdu avec les formulaires. Leur accompagnement a tout rendu clair.",
-          n: "Diego R.",
-          m: "Permis d'études · du Pérou",
+          q: "Excellent service. La vérification de mes formulaires et de mes documents m'a apporté beaucoup de tranquillité. Je recommande son soutien à toute personne ayant besoin d'une orientation en immigration.",
+          n: "Client #3",
+          m: "Citoyenneté",
         },
         {
-          q: "Ils ont guidé la résidence de toute notre famille. Aujourd'hui nous sommes réunis au Canada, reconnaissants.",
-          n: "Famille Okonkwo",
-          m: "Résidence familiale · du Nigéria",
+          q: "Son expérience et ses connaissances ont rendu tout le processus beaucoup plus simple. J'ai reçu des réponses rapides, une attention personnalisée et un suivi constant de mon dossier.",
+          n: "José Muñoz",
+          m: "Permis d'études",
         },
       ],
     },
@@ -742,7 +742,7 @@ export const translations: Record<Language, Translation> = {
         },
         {
           q: "Dans quelles langues servez-vous ?",
-          a: "Nous servons en espagnol, en français et en anglais, pour que vous compreniez chaque étape dans votre langue.",
+          a: "Nous servons en espagnol et en français, pour que vous compreniez chaque étape dans votre langue.",
         },
         {
           q: "Combien coûte le démarrage ?",
